@@ -1,4 +1,5 @@
 ﻿using Core.Models;
+using NLog;
 using OpenQA.Selenium;
 using SauceDemoAutomationTests.Tests;
 
@@ -13,10 +14,12 @@ namespace SauceDemoAutomationTests.Pages
 
         public LogInPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
+            _logger.Info("User redirected to the [Login] page");
         }
 
         public LogInPage(IWebDriver driver) : base(driver, false)
         {
+            _logger.Info("User redirected to the [Login] page");
         }
 
         public override void OpenPageByUrl()

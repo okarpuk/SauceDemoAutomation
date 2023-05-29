@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using Core;
+using NLog;
 
 namespace SauceDemoAutomationTests.Pages
 {
     public abstract class BasePage
     {
+        protected static readonly Logger _logger = LogManager.GetCurrentClassLogger();
         protected IWebDriver Driver;
         protected WaitService WaitService;
 

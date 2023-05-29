@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Allure.Commons;
 using Core.Models;
+using NLog;
+using NLog.Fluent;
 using NUnit.Allure.Attributes;
 using SauceDemoAutomationTests.Pages;
 
@@ -31,7 +33,7 @@ namespace SauceDemoAutomationTests.Tests
                 .SetPassword("secret_sauce")
                 .SetFirstName("Qwerty")
                 .SetLastName("Qwerty")
-                .SetZipCode("12345")
+                .SetZipCode("")
                 .Build();
 
             LogInPage

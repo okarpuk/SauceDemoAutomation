@@ -20,10 +20,12 @@ namespace SauceDemoAutomationTests.Pages
 
         public CheckoutPersonalDataPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
+            _logger.Info("User redirected to the [Checkout personal data] page");
         }
 
         public CheckoutPersonalDataPage(IWebDriver driver) : base(driver, false)
         {
+            _logger.Info("User redirected to the [Checkout personal data] page");
         }
 
         public override void OpenPageByUrl()

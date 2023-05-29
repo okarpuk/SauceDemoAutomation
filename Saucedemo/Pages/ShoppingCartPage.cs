@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using SauceDemoAutomationTests.Tests;
 
+
 namespace SauceDemoAutomationTests.Pages
 {
     public class ShoppingCartPage : BasePage
@@ -16,10 +17,12 @@ namespace SauceDemoAutomationTests.Pages
 
         public ShoppingCartPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
+            _logger.Info("User redirected to the [Shopping cart] page");
         }
 
         public ShoppingCartPage(IWebDriver driver) : base(driver, false)
         {
+            _logger.Info("User redirected to the [Shopping cart] page");
         }
 
         public override void OpenPageByUrl()

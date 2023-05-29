@@ -17,10 +17,12 @@ namespace SauceDemoAutomationTests.Pages
 
         public CheckoutFinalPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
+            _logger.Info("User redirected to the [Checkout final] page");
         }
 
         public CheckoutFinalPage(IWebDriver driver) : base(driver, false)
         {
+            _logger.Info("User redirected to the [Checkout final] page");
         }
 
         public override void OpenPageByUrl()
