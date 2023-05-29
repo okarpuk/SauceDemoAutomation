@@ -6,12 +6,15 @@ using Allure.Commons;
 using Core;
 using Core.Utilites.Configuration;
 using SauceDemoAutomationTests.Pages;
+using NLog;
 
 namespace SauceDemoAutomationTests.Tests
 {
     [AllureNUnit]
     public class BaseTest
     {
+        private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
+
         public static readonly string? BaseUrl = Configurator.AppSettings.URL;
 
         protected static IWebDriver Driver;
@@ -29,6 +32,11 @@ namespace SauceDemoAutomationTests.Tests
         [SetUp]
         public void Setup()
         {
+            _logger.Info("Info level message");
+            _logger.Warn("Warn level message");
+            _logger.Error("Error level message");
+            _logger.Fatal("Fatal level message");
+
             Driver = new Browser().Driver;
             WaitService = new WaitService(Driver);
             LogInPage = new LogInPage(Driver);
