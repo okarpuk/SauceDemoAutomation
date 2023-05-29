@@ -19,7 +19,7 @@ namespace SauceDemoAutomationTests.Tests
                 .SetLogin("standard_user")
                 .SetPassword("secret_sauce")
                 .SetFirstName("Qwerty")
-                .SetLastName("Ytrewq")
+                .SetLastName("")
                 .SetZipCode("12345")
                 .Build();
 

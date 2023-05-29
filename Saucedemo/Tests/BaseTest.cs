@@ -3,9 +3,11 @@ using OpenQA.Selenium.Chrome;
 using Core;
 using Core.Utilites.Configuration;
 using SauceDemoAutomationTests.Pages;
+using NUnit.Allure.Core;
 
 namespace SauceDemoAutomationTests.Tests
 {
+    [AllureNUnit]
     public class BaseTest
     {
         public static readonly string? BaseUrl = Configurator.AppSettings.URL;
