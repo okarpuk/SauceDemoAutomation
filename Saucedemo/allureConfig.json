@@ -2,6 +2,7 @@
   "allure": {
     "directory": "allure-results",
     "links": [
+      "{links}",
       "https://qac01.atlassian.net/browse/{issue}",
       "https://app.qase.io/case/{tms}"
     ]
