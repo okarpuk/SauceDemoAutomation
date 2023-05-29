@@ -33,7 +33,7 @@ namespace SauceDemoAutomationTests.Tests
                 .SetPassword("secret_sauce")
                 .SetFirstName("Qwerty")
                 .SetLastName("Qwerty")
-                .SetZipCode("")
+                .SetZipCode("12345")
                 .Build();
 
             LogInPage

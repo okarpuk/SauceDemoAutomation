@@ -8,6 +8,7 @@ namespace Core.Utilites.Configuration
     public static class Configurator
     {
         private static readonly Lazy<IConfiguration> s_configuration;
+
         public static IConfiguration Configuration => s_configuration.Value;
 
         static Configurator()
