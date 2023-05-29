@@ -1,9 +1,11 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using NUnit.Framework.Interfaces;
+using NUnit.Allure.Core;
+using Allure.Commons;
 using Core;
 using Core.Utilites.Configuration;
 using SauceDemoAutomationTests.Pages;
-using NUnit.Allure.Core;
 
 namespace SauceDemoAutomationTests.Tests
 {
@@ -14,6 +16,8 @@ namespace SauceDemoAutomationTests.Tests
 
         protected static IWebDriver Driver;
         protected WaitService WaitService;
+        private AllureLifecycle _allure;
+
         public LogInPage LogInPage { get; set; }
         public CheckoutFinalPage CheckoutFinalPage { get; set; }
 
@@ -30,11 +34,20 @@ namespace SauceDemoAutomationTests.Tests
             LogInPage = new LogInPage(Driver);
             CheckoutFinalPage = new CheckoutFinalPage(Driver);
             LogInPage.OpenPageByUrl();
+            _allure = AllureLifecycle.Instance;
+
         }
 
         [TearDown]
         public void TearDown()
         {
+            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            {
+                Screenshot screenshot = ((ITakesScreenshot)Driver).GetScreenshot();
+                byte[] screenshotBytes = screenshot.AsByteArray;
+                _allure.AddAttachment("Screenshot", "image/png", screenshotBytes);
+            }
+
             Driver.Quit();
         }
     }
