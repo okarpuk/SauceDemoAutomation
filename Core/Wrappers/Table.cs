@@ -19,13 +19,13 @@ namespace Core.Wrappers
             }
         }
 
-        public int RowCount() {
+        public int RowCount()
+        {
             return _rowList.Count;
         }
 
         public void Click(int column, int row)
-        {
-            
+        { 
         }
     }
 }

@@ -15,6 +15,5 @@ namespace Core.Wrappers
         {
             _uiElement = new UIElement(driver, webElement);
         }
-
     }
 }
